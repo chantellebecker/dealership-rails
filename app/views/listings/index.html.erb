@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listings</h1>
+
+<div class="row">
+  <% @listings.each do |listing| %>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+      <%= link_to listing.make, listing %>
+
+      </div>
+  <div class="panel-body">
+       By <%= listing.model %> <br>
+        Posted <%= listing.created_at %>
+        <p><%= listing.details[0..250] %>...[<%= link_to "Find Out More", listing %>]</p>
+      </div>
+            <% if listing.avatar.exists? %>
+              <%= image_tag listing.avatar.url(:thumb), class: "img-responsive" %>
+            <% end %>
+    <div class="panel-footer">
+        <%= link_to "Edit", edit_listing_path(listing), class: "btn btn-warning" %>
+        <%= link_to "Delete", listing, method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+<br>
+
+
+
+<%= link_to 'New Listing', new_listing_path, class: "btn btn-primary btn-lg" %>
+
+
+
+      
+    
