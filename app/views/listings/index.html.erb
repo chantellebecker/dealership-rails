@@ -11,13 +11,15 @@
 
       </div>
   <div class="panel-body">
-       By <%= listing.model %> <br>
-        Posted <%= listing.created_at %>
+       Model: <%= listing.model %> <br>
+        Available: <%= listing.created_at.strftime('%m/%d/%Y at %I:%M%p') %>
         <p><%= listing.details[0..250] %>...[<%= link_to "Find Out More", listing %>]</p>
       </div>
+      <div class="image">
             <% if listing.avatar.exists? %>
               <%= image_tag listing.avatar.url(:thumb), class: "img-responsive" %>
             <% end %>
+      </div>
     <div class="panel-footer">
         <%= link_to "Edit", edit_listing_path(listing), class: "btn btn-warning" %>
         <%= link_to "Delete", listing, method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %>
