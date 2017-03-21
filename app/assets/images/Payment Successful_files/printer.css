@@ -1,0 +1,40 @@
+/**
+  * This CSS file will have customizations specific for the Printer
+  * The styles mentioned in this file will override the ones mentioned in common.css
+  */
+
+.receiptSection
+{
+	border: 1px solid black;
+}
+
+/* Begin hiding stuff that does not need to be in the printout*/
+
+.psp-header
+{
+	display: none;
+}
+
+.psp-footer
+{
+	display: none;
+}
+
+#receiptGreenContainer
+{
+	border: none;
+	background: transparent;
+}
+
+.mainHeaderToothbrush
+{
+	display: none;
+}
+
+#printReceipt
+{
+	/*Do not show the Print Button in the printout*/
+	display: none;
+}
+
+/* End hiding stuff that does not need to be in the printout*/
